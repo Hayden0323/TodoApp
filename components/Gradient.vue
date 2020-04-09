@@ -1,7 +1,6 @@
 <template>
 	<view class="gradient">
 		<gradient-color 
-		11
 			v-for="(todo, index) in todos"
 			:key="todo.name"
 			:colors="todo.colors"
