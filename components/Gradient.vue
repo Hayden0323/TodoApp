@@ -5,7 +5,6 @@
 			:key="todo.name"
 			:colors="todo.colors"
 			:active="index <= currentIndex">
-				11
 		</gradient-color>
 	</view>
 </template>
