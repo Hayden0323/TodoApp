@@ -6,7 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    currentIndex: 0,
+    currentIndex: 1,
     todos: [
       {
         icon: 'user',

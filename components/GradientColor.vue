@@ -17,9 +17,9 @@
 		},
 		computed: {
 			gradientColor () {
-				const colorBottom = `color-stop(30%, ${this.colors[0]})`;
-				const colorTop = `to(${this.colors[1]})`;
-				return `linear-gradient(linear, left bottom, left top, ${colorBottom}, ${colorTop})`
+				const colorBottom = `${this.colors[0]} 30%`;
+				const colorTop = `${this.colors[1]}`;
+				return `linear-gradient(to top, ${colorBottom}, ${colorTop})`
 			}
 		}
 	}
