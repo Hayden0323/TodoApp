@@ -1,8 +1,11 @@
 <template>
 	<transition name="fade">
 		<div class="task" v-if="!task.deleted">
-			<input :id="id" type="checkbox" v-model="task.done" />
-			<label :for="id">{{ task.title }}</label>
+			<checkbox-group @change="checkboxChange">
+				<label :for="id">
+					<checkbox :id="id" :value="id" :checked="task.done" />{{ task.title }}
+				</label>
+			</checkbox-group>
 			<transition name="fade">
 				<span class="task-delete" v-show="task.done" @click="deleteTask({task})">
 					<i class="fa fa-trash"></i>
@@ -17,6 +20,7 @@
 		mapMutations
 	} from 'vuex'
 	let GID = 1
+
 	export default {
 		props: {
 			task: {
@@ -26,30 +30,42 @@
 		},
 		data() {
 			return {
-				id: `task-${GID++}`
+				id: `task-${this.task.id}`
 			}
 		},
 		methods: {
-			...mapMutations(['deleteTask'])
+			...mapMutations(['deleteTask']),
+			checkboxChange (e) {
+				e.detail.value.length == 1 ? this.task.done = true : this.task.done = false;
+			}
 		}
 	}
 </script>
 
 <style>
 	.task {
-	  display: flex;
-	  padding: 12px 0;
-	  border-bottom: 1px solid #eee;
-	  font-size: 14px;
+		display: flex;
+		padding: 12px 0;
+		border-bottom: 1px solid #eee;
+		font-size: 14px;
+		justify-content: space-between;
 	}
-	.task input {
-	  display: none;
+
+	.task checkbox {
+		transform: scale(0.8);
+		display: inline-block;
+		margin-right: 20px;
+		margin-top: -1px;
+		width: 10px;
+		height: 10px;
 	}
+
 	.task label {
-	  flex: 1;
-	  line-height: 20px;
+		flex: 1;
+		line-height: 20px;
 	}
-	.task label:before,
+
+	/* .task label:before,
 	.task label:after {
 	  content: '';
 	  display: inline-block;
@@ -79,24 +95,27 @@
 	  background-color: #ccc;
 	  float: left;
 	}
-	.task input:checked + label:after {
+	.task checkbox:checked + label:after {
 	  display: inline-block;
-	}
+	} */
 	.task-delete {
-	  padding: 0 10px;
-	  color: #ccc;
-	  font-size: 16px;
+		padding: 0 10px;
+		color: #ccc;
+		font-size: 16px;
 	}
+
 	.fade-leave-to,
 	.fade-enter {
-	  opacity: 0;
+		opacity: 0;
 	}
+
 	.fade-enter-to,
 	.fade-leave {
-	  opacity: 1;
+		opacity: 1;
 	}
+
 	.fade-enter-active,
 	.fade-leave-active {
-	  transition: all 0.3s ease;
+		transition: all 0.3s ease;
 	}
 </style>

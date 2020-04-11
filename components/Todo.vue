@@ -1,5 +1,5 @@
 <template>
-	<view class="todo" :class="{todo_selected: selected}">
+	<div class="todo" :class="{todo_selected: selected}">
 		<div class="todo-head" @click="handleClick">
 			<div class="todo-icon" :style={color}>
 				<i :class="['fa', `fa-${todo.icon}`]"></i>
@@ -36,7 +36,7 @@
 				</ul>
 			</div>
 		</div>
-	</view>
+	</div>
 </template>
 
 <script>
@@ -90,7 +90,7 @@
 		},
 		methods: {
 			handleClick() {
-				const appRect = document.querySelector('.home').getBoundingClientRect()
+				const appRect = document.querySelector('body').getBoundingClientRect()
 				const elRect = this.$el.getBoundingClientRect()
 				const todo = this.todo
 				const rect = {}

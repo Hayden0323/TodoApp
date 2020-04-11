@@ -5,6 +5,8 @@
 		<gradient></gradient>
 		<todo-list></todo-list>
 		<todo-detail></todo-detail>
+		<todo-editing></todo-editing>
+		<floating-button></floating-button>
 	</view>
 </template>
 
@@ -14,6 +16,8 @@
 	import Gradient from '../../components/Gradient.vue'
 	import TodoList from '../../components/TodoList.vue'
 	import TodoDetail from '../../components/TodoDetail.vue'
+	import TodoEditing from '../../components/TodoEditing.vue'
+	import FloatingButton from '../../components/FloatingButton.vue'
 	
 	export default {
 		components: {
@@ -21,7 +25,9 @@
 			Avatar,
 			Gradient,
 			TodoList,
-			TodoDetail
+			TodoDetail,
+			TodoEditing,
+			FloatingButton
 		},
 		data() {
 			return {

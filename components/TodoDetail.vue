@@ -78,22 +78,22 @@
 		padding: 0 20px;
 		box-shadow: none;
 	}
-
-	.todo-detail .todo-head,
-	.todo-detail .todo-body {
+	
+	.todo-detail /deep/ .todo-head,
+	.todo-detail /deep/ .todo-body {
 		transform: translate3d(0, 88px, 0);
 	}
 
-	.todo-detail .todo-menu {
-		opacity: 0
+	.todo-detail /deep/ .todo-menu {
+		opacity: 0;
 	}
 
-	.todo-detail .todo-tasks {
+	.todo-detail /deep/ .todo-tasks {
 		opacity: 1;
 		transform: scaleY(1);
 	}
 
-	.todo-detail .todo-bar {
+	.todo-detail /deep/ .app-bar {
 		opacity: 1;
 		transform: translate3d(0, 0, 0);
 	}
@@ -108,26 +108,26 @@
 		padding: 0 20px;
 	}
 
-	.show-enter-to .todo-head,
-	.show-enter-to .todo-body,
-	.show-leave .todo-head,
-	.show-leave .todo-body {
-		ransform: translate3d(0, 88px, 0);
+	.show-enter-to /deep/ .todo-head,
+	.show-enter-to /deep/ .todo-body,
+	.show-leave /deep/ .todo-head,
+	.show-leave /deep/ .todo-body {
+		transform: translate3d(0, 88px, 0);
 	}
 
-	.show-enter-to .todo-menu,
-	.show-leave .todo-menu {
+	.show-enter-to /deep/ .todo-menu,
+	.show-leave /deep/ .todo-menu {
 		opacity: 0;
 	}
 
-	.show-enter-to .todo-tasks,
-	.show-leave .todo-tasks {
+	.show-enter-to /deep/ .todo-tasks,
+	.show-leave /deep/ .todo-tasks {
 		opacity: 1;
 		transform: scale3d(1, 1, 1);
 	}
 
-	.show-enter-to .todo-bar,
-	.show-leave .todo-bar {
+	.show-enter-to /deep/ .app-bar,
+	.show-leave /deep/ .app-bar {
 		opacity: 1;
 		transform: translate3d(0, 0, 0);
 	}
@@ -142,29 +142,29 @@
 		padding: 0;
 	}
 
-	.show-leave-to .todo-head,
-	.show-enter .todo-head {
+	.show-leave-to /deep/ .todo-head,
+	.show-enter /deep/ .todo-head {
 		transform: translate3d(0, 0, 0);
 	}
 
-	.show-leave-to .todo-body,
-	.show-enter .todo-body {
+	.show-leave-to /deep/ .todo-body,
+	.show-enter /deep/ .todo-body {
 		transform: translate3d(0, 189px, 0);
 	}
 
-	.show-leave-to .todo-menu,
-	.show-enter .todo-menu {
+	.show-leave-to /deep/ .todo-menu,
+	.show-enter /deep/ .todo-menu {
 		opacity: 1;
 	}
 
-	.show-leave-to .todo-tasks,
-	.show-enter .todo-tasks {
+	.show-leave-to /deep/ .todo-tasks,
+	.show-enter /deep/ .todo-tasks {
 		opacity: 0;
 		transform: scale3d(1, 0, 1);
 	}
 
-	.show-leave-to .todo-bar,
-	.show-enter .todo-bar {
+	.show-leave-to /deep/ .app-bar,
+	.show-enter /deep/ .app-bar {
 		opacity: 0;
 		transform: translate3d(0, -100%, 0);
 	}
@@ -174,18 +174,18 @@
 		transition: all 0.5s ease;
 	}
 
-	.show-enter-active .todo,
-	.show-enter-active .todo-head,
-	.show-enter-active .todo-body,
-	.show-enter-active .todo-menu,
-	.show-enter-active .todo-tasks,
-	.show-enter-active .todo-app-bar,
-	.show-leave-active .todo,
-	.show-leave-active .todo-head,
-	.show-leave-active .todo-body,
-	.show-leave-active .todo-menu,
-	.show-leave-active .todo-tasks,
-	.show-leave-active .todo-app-bar {
+	.show-enter-active /deep/ .todo,
+	.show-enter-active /deep/ .todo-head,
+	.show-enter-active /deep/ .todo-body,
+	.show-enter-active /deep/ .todo-menu,
+	.show-enter-active /deep/ .todo-tasks,
+	.show-enter-active /deep/ .app-bar,
+	.show-leave-active /deep/ .todo,
+	.show-leave-active /deep/ .todo-head,
+	.show-leave-active /deep/ .todo-body,
+	.show-leave-active /deep/ .todo-menu,
+	.show-leave-active /deep/ .todo-tasks,
+	.show-leave-active /deep/ .app-bar {
 		transition: all 0.5s ease;
 	}
 </style>
